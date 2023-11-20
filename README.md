@@ -84,5 +84,5 @@ Users should be able to:
 
 ## Acknowledgments
 
-I just want say thanks to Kevin Powell. i am trying to learn coding with his youtobe channel [@Kevin Powell](https://www.youtube.com/@KevinPowell)
+I just want say thanks to Kevin Powell. i am trying to learn coding with his youtube channel [@Kevin Powell](https://www.youtube.com/@KevinPowell)
 
