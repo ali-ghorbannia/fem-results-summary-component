@@ -1,0 +1,279 @@
+:root {
+
+  --primary-Light-red: 0, 100%, 67%;
+  --primary-Orangey-yellow: 39, 100%, 56%;
+  --primary-Green-teal: 166, 100%, 37%;
+  --primary-Cobalt-blue: 234, 85%, 45%;
+
+  --clr-primary-Light-red: hsl(var(--primary-Light-red));
+  --clr-primary-Orangey-yellow: hsl(var(--primary-Orangey-yellow));
+  --clr-primary-Green-teal: hsl(var(--primary-Green-teal));
+  --clr-primary-Cobalt-blue: hsl(var(--primary-Cobalt-blu)e);
+
+  --clr-Light-slate-blue: 252, 100%, 67%;
+  --clr-Light-royal-blue: 241, 81%, 54%;
+  --clr-Violet-blue: 256, 72%, 46%, 1;
+  --clr-Persian-blue: 241, 72%, 46%, 0;
+
+  --clr-background-gradiant: linear-gradient(hsl(var(--clr-Light-slate-blue)), hsl(var(--clr-Light-royal-blue)));
+
+  --clr-circle-gradiant: linear-gradient(hsla(var(--clr-Violet-blue)), hsla(var(--clr-Persian-blue)));
+
+  --neutral-White: 0, 0%, 100%;
+  --neutral-Pale-blue: 221, 100%, 96%;
+  --neutral-Light-lavender: 241, 100%, 89%;
+  --neutral-Dark-gray-blue: 224, 30%, 27%;
+
+  --clr-neutral-White: hsl(var(--neutral-White));
+  --clr-neutral-Pale-blue: hsl(var(--neutral-Pale-blue));
+  --clr-neutral-Light-lavender: hsl(var(--neutral-Light-lavender));
+  --clr-neutral-Dark-gray-blue: hsl(var(--neutral-Dark-gray-blue));
+
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+
+  --font-family-defult: 'Hanken Grotesk', sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.75rem;
+  --fs-800: 2rem;
+  --fs-900: 5rem;
+
+
+}
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--font-family-defult);
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-Dark-gray-blue);
+}
+
+@media (min-width:600px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+.summary-result-container {
+  --padding: 2.5rem;
+  --border-radius: 2rem;
+
+  max-width: 46rem;
+  display: grid;
+}
+
+@media(min-width:600px) {
+  .summary-result-container {
+    margin-inline: 1rem;
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: .5rem 1rem 3rem hsl(var(--neutral-Dark-gray-blue), .2);
+  }
+}
+
+.result {
+  text-align: center;
+  background: var(--clr-background-gradiant);
+  color: hsla(var(--neutral-White), 0.8);
+
+  padding:
+    var(--padding) calc(var(--padding) * 1.5);
+  border-radius:
+    0 0 var(--border-radius) var(--border-radius);
+}
+
+@media (min-width: 600px) {
+  .result {
+    border-radius: var(--border-radius);
+  }
+}
+
+.section-title {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-600);
+}
+
+.result-score {
+  display: grid;
+  place-content: center;
+  width: 12rem;
+  margin-inline: auto;
+  background: var(--clr-circle-gradiant);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.result-score span {
+  display: block;
+  font-size: var(--fs-900);
+  font-weight: var(--fw-black);
+  line-height: 1;
+  color: var(--clr-neutral-White);
+}
+
+.result-grade {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-700);
+  color: var(--clr-neutral-White);
+}
+
+.summary {
+  background: var(--clr-neutral-Whitet);
+  color: var(--clr-primary-Cobalt-blue);
+  border-radius: 2rem;
+  padding:
+    var(--padding) calc(var(--padding) * 1.5);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: hsl(var(--item-color), .1);
+}
+
+.summary-item svg {
+  stroke: hsl(var(--item-color));
+}
+
+.summary-item-title {
+  color: hsl(var(--item-color));
+  font-weight: var(--fw-bold);
+} 
+
+.summary-item[data-item-type="accent-1"] {
+  --item-color: var(--clr-accent-1);
+}
+.summary-item[data-item-type="accent-2"] {
+  --item-color: var(--clr-accent-2);
+}
+.summary-item[data-item-type="accent-3"] {
+  --item-color: var(--clr-accent-3);
+}
+.summary-item[data-item-type="accent-4"] {
+  --item-color: var(--clr-accent-4);
+}
+
+.summary-score {
+  font-weight: var(--fw-black);
+  color: hsla(var(--neutral-Dark-gray-blue), .5);
+}
+
+.summary-score span {
+  color: var(--clr-neutral-Dark-gray-blue);
+}
+
+
+.grid-flow {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid-flow[data-spacing="large"] {
+  gap: 2rem;
+}
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+
+.button {
+  border: 0;
+  background-color: var(--clr-neutral-Dark-gray-blue);
+  color: var(--clr-neutral-White);
+  cursor: pointer;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border-radius: 100vw;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--clr-background-gradiant);
+}
